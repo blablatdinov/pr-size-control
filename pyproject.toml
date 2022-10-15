@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "pr-size-control"
+version = "0.0.1-alpha1"
+description = ""
+authors = ["Almaz Ilaletdinov <a.ilaletdinov@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "pr_size_control", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.85.1"
+uvicorn = "^0.18.3"
+
+[tool.poetry.group.dev.dependencies]
+wemake-python-styleguide = "^0.17.0"
+flakeheaven = "^3.0.0"
+isort = "^5.10.1"
+mypy = "^0.982"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.flakeheaven]
+base = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/flakeheaven.toml"
+max-line-length = 120
+docstring_style = "sphinx"
+
+[tool.isort]
+line_length = 119
+skip=["migrations/*.py", ".venv"]
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.pytest]
+asyncio_mode = "auto"
+
+[mypy]
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_untyped_calls = true
