@@ -1,17 +1,20 @@
-import pytest
-
+"""Test parse gitea webhook."""
 import json
+
+import pytest
 
 from pr_size_control.gitea_pr_num import GiteaPRIndex
 
 
 @pytest.fixture
 def webhook_json():
-    with open('tests/fixtures/gitea_webhook_example.json', 'r') as file:
-        return json.loads(file.read())
+    """Webhook json fixture."""
+    with open('tests/fixtures/gitea_webhook_example.json', 'r') as webhook:
+        return json.loads(webhook.read())
 
 
-async def test(webhook_json):
-    got = await GiteaPRIndex(webhook_json).value()
+def test(webhook_json):
+    """Test parse pull request index."""
+    got = int(GiteaPRIndex(webhook_json))
 
     assert got == 1

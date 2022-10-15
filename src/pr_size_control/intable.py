@@ -1,4 +1,12 @@
-class Intable(object):
+"""Module contains Intable Interface."""
 
-    async def value(self):
+
+class Intable(object):
+    """Intable Interface."""
+
+    def __int__(self):
+        """Integer representation.
+
+        :raises NotImplementedError: if not implemented
+        """
         raise NotImplementedError

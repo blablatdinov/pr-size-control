@@ -29,6 +29,13 @@ base = "https://raw.githubusercontent.com/wemake-services/wemake-python-stylegui
 max-line-length = 120
 docstring_style = "sphinx"
 
+[tool.flakeheaven.exceptions."tests"]
+"flake8-bandit" = ["-S101"]
+"flake8-darglint" = ["-DAR101", "-DAR201"]
+"wemake-python-styleguide" = [
+    "-WPS442",  # using fixture as test param
+]
+
 [tool.isort]
 line_length = 119
 skip=["migrations/*.py", ".venv"]
