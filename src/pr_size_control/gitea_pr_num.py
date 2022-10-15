@@ -1,4 +1,6 @@
 """Module with class for find pr index."""
+import json
+
 from pr_size_control.intable import Intable
 
 
@@ -17,4 +19,4 @@ class GiteaPRIndex(Intable):
 
         :return: int
         """
-        return 1
+        return json.loads(self._webhook_json)['pull_request']['number']
