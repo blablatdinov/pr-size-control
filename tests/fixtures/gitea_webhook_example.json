@@ -9,7 +9,7 @@
   "pull_request": {
     "id": 55324,
     "url": "https://gitea.com/blablatdinov/quranbot-aiogram/pulls/1",
-    "number": 1,
+    "number": {{ pr_id }},
     "user": {
       "id": 26275,
       "login": "blablatdinov",
