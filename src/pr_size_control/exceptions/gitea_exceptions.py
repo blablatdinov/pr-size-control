@@ -1,0 +1,2 @@
+class GiteaException(Exception):
+    pass
