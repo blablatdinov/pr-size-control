@@ -1,2 +1,5 @@
-class GiteaException(Exception):
-    pass
+"""Module contain gitea exceptions."""
+
+
+class GiteaBaseError(Exception):
+    """Exceptions for gitea."""

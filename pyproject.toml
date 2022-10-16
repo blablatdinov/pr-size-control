@@ -37,6 +37,7 @@ docstring_style = "sphinx"
 "flake8-darglint" = ["-DAR101", "-DAR201"]
 "wemake-python-styleguide" = [
     "-WPS442",  # using fixture as test param
+    "-WPS432",  # tests can countain magic numbers
 ]
 
 [tool.isort]
